@@ -47,6 +47,8 @@ def get_1c_config() -> dict:
         logger.error("Unable to get URL of infobase HTTP service!")
         exit(1)
 
+    return result
+
 
 def get_1c_url(path: str) -> str:
 
