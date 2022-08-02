@@ -37,11 +37,15 @@ def get_logger(name) -> logging.Logger:
 
 def get_1c_config() -> dict:
 
-    return {
+    result = {
         "1c_url": getenv("RFQ_1C_URL"),
         "1c_username": getenv("RFQ_1C_USERNAME"),
         "1c_password": getenv("RFQ_1C_PASSWORD"),
     }
+
+    if result.get("1c_url") is None:
+        logger.error("Unable to get URL of infobase HTTP service!")
+        exit(1)
 
 
 def get_1c_url(path: str) -> str:
@@ -57,7 +61,7 @@ def get_1c_auth() -> tuple | None:
 
     result = None
 
-    if config["1c_username"]:
+    if config["1c_username"] is not None:
         result = (config["1c_username"], config["1c_password"])
 
     return result
@@ -145,8 +149,8 @@ class Data(Resource):
         return send_post_request_to_1c(path, body)
 
 
-config = get_1c_config()
 logger = get_logger(basename(__file__))
+config = get_1c_config()
 
 app = flask.Flask(__name__)
 
