@@ -3,7 +3,8 @@
 import json
 import logging
 import logging.config
-import os
+from os import getenv
+from os.path import basename
 
 import flask
 import requests
@@ -14,9 +15,11 @@ from flask_restful import Api, Resource
 
 def get_logger(name) -> logging.Logger:
     def get_stream_handler() -> logging.StreamHandler:
+
         handler = logging.StreamHandler()
 
-        log_format = f"%(asctime)s %(message)s"
+        # noinspection SpellCheckingInspection
+        log_format = "%(asctime)s %(message)s"
         formatter = logging.Formatter(log_format)
 
         handler.setFormatter(formatter)
@@ -24,38 +27,38 @@ def get_logger(name) -> logging.Logger:
 
         return handler
 
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)
+    result = logging.getLogger(name)
+    result.setLevel(logging.DEBUG)
 
-    logger.addHandler(get_stream_handler())
-
-    return logger
-
-
-def get_config() -> dict:
-    return {
-        "1c_http_service_url": os.getenv("RFQ_1C_HS_URL"),
-        "1c_http_service_username": os.getenv("RFQ_1C_HS_USERNAME"),
-        "1c_http_service_password": os.getenv("RFQ_1C_HS_PASSWORD"),
-    }
-
-
-def get_infobase_http_service_url(path: str) -> str:
-    result = CONFIG["1c_http_service_url"]
-    result = result if result.endswith("/") else f"{result}/"
-    result = "{}{}/".format(result, path)
+    result.addHandler(get_stream_handler())
 
     return result
 
 
-def get_infobase_http_service_auth() -> tuple | None:
+def get_1c_config() -> dict:
+
+    return {
+        "1c_url": getenv("RFQ_1C_URL"),
+        "1c_username": getenv("RFQ_1C_USERNAME"),
+        "1c_password": getenv("RFQ_1C_PASSWORD"),
+    }
+
+
+def get_1c_url(path: str) -> str:
+
+    result = config["1c_url"]
+    result = result if result.endswith("/") else f"{result}/"
+    result = f"{result}{path}/"
+
+    return result
+
+
+def get_1c_auth() -> tuple | None:
+
     result = None
 
-    if CONFIG["1c_http_service_username"]:
-        result = (
-            CONFIG["1c_http_service_username"],
-            CONFIG["1c_http_service_password"],
-        )
+    if config["1c_username"]:
+        result = (config["1c_username"], config["1c_password"])
 
     return result
 
@@ -64,62 +67,54 @@ def get_api_response(data: dict) -> flask.Response:
     return flask.Response(response=json.dumps(data), mimetype="application/json")
 
 
-def get_api_response_using_status_code(
-    response: requests.models.Response,
-) -> flask.Response:
-    LOGGER.debug(
-        "Response status code: {}, text:\n{}".format(
-            response.status_code, response.text
-        )
+def get_api_response_with_check(response: requests.Response) -> flask.Response:
+
+    logger.debug(
+        "Response status code: %s, text:\n%s", response.status_code, response.text
     )
 
     if response.status_code == 200:
         data = response.json()
     else:
-        data = get_data_for_api_response_with_error_description(
+        text = f"Inappropriate HTTP status code received ({response.status_code})."
+        data = get_error_data_for_api_response(
             error_code=201,
-            error_text="Inappropriate HTTP status code received ({}).".format(
-                response.status_code
-            ),
+            error_text=text,
         )
 
     return get_api_response(data)
 
 
-def send_get_request_to_infobase_http_service(path: str) -> requests.Response:
-    auth = get_infobase_http_service_auth()
-    url = get_infobase_http_service_url(path)
+def send_get_request_to_1c(path: str) -> requests.Response:
+    url = get_1c_url(path)
+    auth = get_1c_auth()
 
-    LOGGER.debug("Sending a GET request to {}".format(url))
+    logger.debug("Sending a GET request to %s", url)
 
     response = requests.get(url, auth=auth)
 
-    return get_api_response_using_status_code(response)
+    return get_api_response_with_check(response)
 
 
-def send_post_request_to_infobase_http_service(
-    path: str, data: dict
-) -> requests.Response:
-    url = get_infobase_http_service_url(path)
-    auth = get_infobase_http_service_auth()
+def send_post_request_to_1c(path: str, data: dict) -> requests.Response:
+    url = get_1c_url(path)
+    auth = get_1c_auth()
 
-    LOGGER.debug("Send a POST a request to {}, body:\n{}".format(url, data))
+    logger.debug("Send a POST a request to %s, body:\n%s", url, data)
 
     response = requests.post(url, json=data, auth=auth)
 
-    return get_api_response_using_status_code(response)
+    return get_api_response_with_check(response)
 
 
-def get_data_for_api_response_with_error_description(
-    error_code: int, error_text: str
-) -> dict:
+def get_error_data_for_api_response(error_code: int, error_text: str) -> dict:
     return {"ErrorCode": error_code, "ErrorText": error_text}
 
 
-class Hello(Resource):
+class Home(Resource):
     @staticmethod
     def get():
-        data = get_data_for_api_response_with_error_description(
+        data = get_error_data_for_api_response(
             error_code=200, error_text="No endpoint specified."
         )
         return get_api_response(data)
@@ -128,32 +123,30 @@ class Hello(Resource):
 class Ping(Resource):
     @staticmethod
     def get():
-        return send_get_request_to_infobase_http_service("Ping")
+        return send_get_request_to_1c("Ping")
 
 
-class RFQ(Resource):
+class Data(Resource):
     @staticmethod
     def get_path(rfq_key: str):
-        return f"RequestForQuotation/{rfq_key}"
+        return f"Data/{rfq_key}"
 
     @staticmethod
     def get(rfq_key: str):
-        path = RFQ.get_path(rfq_key)
+        path = Data.get_path(rfq_key)
 
-        return send_get_request_to_infobase_http_service(path)
+        return send_get_request_to_1c(path)
 
     @staticmethod
     def post(rfq_key: str):
-        path = RFQ.get_path(rfq_key)
+        path = Data.get_path(rfq_key)
         body = request.get_json()
 
-        return send_post_request_to_infobase_http_service(path, body)
+        return send_post_request_to_1c(path, body)
 
 
-CURRENT_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
-
-CONFIG = get_config()
-LOGGER = get_logger(os.path.basename(__file__))
+config = get_1c_config()
+logger = get_logger(basename(__file__))
 
 app = flask.Flask(__name__)
 
@@ -161,9 +154,9 @@ CORS(app)
 
 api = Api(app)
 
-api.add_resource(Hello, "/")
+api.add_resource(Home, "/")
 api.add_resource(Ping, "/Ping/")
-api.add_resource(RFQ, "/RequestForQuotation/<rfq_key>/")
+api.add_resource(Data, "/Data/<rfq_key>/")
 
 if __name__ == "__main__":
     app.run()
