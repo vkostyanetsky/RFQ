@@ -25,11 +25,11 @@ Now you need to enable a sort of gateway between a 1C:Enterprise infobase and a 
 
 It needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below. If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
 
-| Name              | Example                                 | Meaning                                                       |
-|-------------------|-----------------------------------------|---------------------------------------------------------------|
-| `RFQ_1C_URL`      | `"http://localhost/RFQInfobase/hs/RFQ"` | URL of the 1C:Enterprise HTTP service that you have published | 
-| `RFQ_1C_USERNAME` | `"RFQ User"`                            | Login of a 1C:Enterprise user with the RFQ role assigned      |
-| `RFQ_1C_PASSWORD` | `"123"`                                 | Password of the 1C:Enterprise user                            |
+| Variable Name     | Example Value                         | Meaning                                                       |
+|-------------------|---------------------------------------|---------------------------------------------------------------|
+| `RFQ_1C_URL`      | `http://localhost/RFQInfobase/hs/RFQ` | URL of the 1C:Enterprise HTTP service that you have published | 
+| `RFQ_1C_USERNAME` | `RFQ User`                            | Login of a 1C:Enterprise user with the RFQ role assigned      |
+| `RFQ_1C_PASSWORD` | `123`                                 | Password of the 1C:Enterprise user                            |
 
 Now simply run the `api.py` script:
 
