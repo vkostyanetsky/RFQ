@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.14">
+	<ConfigVersions>
+		<Metadata name="Catalog.Companies" id="87a3e81d-e060-45f8-899b-172e2116261a" configVersion="8357fec825307e498cad1370dda24a7c00000000"/>
+		<Metadata name="Catalog.Contracts" id="26a0bf13-b464-4d66-955f-af132d88e98c" configVersion="153ea1d842d97e4cb2817ec2050c8c8400000000"/>
+		<Metadata name="Catalog.Items" id="566ef2f8-9c63-4c36-be0e-daa49acacd1b" configVersion="551034e194c9da4c84280e74cb8f7a5200000000"/>
+		<Metadata name="Catalog.Questions" id="d32ace39-4106-4f6d-888f-3267b50281ca" configVersion="7c815937078e144985015a5b72b06cab00000000"/>
+		<Metadata name="Catalog.UOM" id="6dbe9d53-9d8f-463c-bbff-db71f0243698" configVersion="256eb778fc784b4da79421a279da4db400000000"/>
+		<Metadata name="Catalog.UOM.Predefined" id="6dbe9d53-9d8f-463c-bbff-db71f0243698.1c" configVersion="4406bf03216fff4dbc07b489764d1b3300000000"/>
+		<Metadata name="Configuration.RFQ" id="d7069331-3f1b-4124-bae0-2ba78e7c435e" configVersion="7ab10d06936e9045863032764539fbed00000000"/>
+		<Metadata name="Configuration.RFQ.CommandInterface" id="cf8a2daa-5e8e-4a58-ae1b-5483f6e59c36.a" configVersion="48942e9de043a54f9f8560e87d10586f00000000"/>
+		<Metadata name="Constant.RFQInterfaceURL" id="a0e7579f-bf5b-4c40-900c-a705c8d16e85" configVersion="9d4b0c19b7e7ac49a77e81107b6c0bd900000000"/>
+		<Metadata name="DefinedType.RFQKey" id="381ef451-f7fc-4334-9e43-8798051fa70a" configVersion="0595ca31e4cc7844954f2950de3cee7400000000"/>
+		<Metadata name="Document.ProcurementRequisition" id="a3529501-e7b9-4ae3-972c-a03b6ccf40fc" configVersion="c9ee8d2a94d5484eae394295311a9ec800000000">
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Suppliers.Attribute.Contract" id="29038aab-9bc9-4e93-afdc-5567fe9dbccf"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Suppliers" id="3b6cf7db-43ac-4d16-9f6c-e0e06f25dd14"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Questions" id="63b8e7cf-24de-4b58-ad05-2fed7df28331"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Questions.Attribute.Question" id="7aabaf75-929d-427a-959e-04dae4e3a807"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Inventory" id="b17f25af-530f-496d-9e2c-68da1b3e92ed"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Suppliers.Attribute.Company" id="d434dd24-7228-4767-b8e1-865d080404ad"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Inventory.Attribute.Quantity" id="d6802207-65ea-4a3c-8c2f-74a782e10302"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Suppliers.Attribute.RFQKey" id="edfcc4ee-5d04-45c1-98ec-7c2b4e1735df"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Inventory.Attribute.Item" id="f14aa24f-f671-47c3-adad-4cbf5029bb9d"/>
+			<Metadata name="Document.ProcurementRequisition.TabularSection.Inventory.Attribute.UnitOfMeasure" id="f628c47d-fb3c-48da-8182-a24a9d6951f9"/>
+		</Metadata>
+		<Metadata name="Document.ProcurementRequisition.Form.DocumentForm" id="995a1b2e-6db2-43ef-bca8-999dafe1e4a0" configVersion="04d256dcb64f164e8d46cf9e09be3bb600000000"/>
+		<Metadata name="Document.ProcurementRequisition.Form.DocumentForm.Form" id="995a1b2e-6db2-43ef-bca8-999dafe1e4a0.0" configVersion="287e4eeca7ca994bad16a2692c8ce8cd00000000"/>
+		<Metadata name="Document.ProcurementRequisition.ObjectModule" id="a3529501-e7b9-4ae3-972c-a03b6ccf40fc.0" configVersion="0421f257ddda02478d7f96edabaf90a600000000"/>
+		<Metadata name="Document.ResponseToRFQ" id="ec0fe097-4d1b-409e-9f58-4d2a850d5d1e" configVersion="3d06db29d3c27549bb5bbe9a214a521500000000">
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Inventory.Attribute.Price" id="09df2b6b-0fdb-4173-b64f-29f2066d4fbf"/>
+			<Metadata name="Document.ResponseToRFQ.Attribute.Company" id="6de158b9-0449-4ab9-947b-f052ea6a50fc"/>
+			<Metadata name="Document.ResponseToRFQ.Attribute.DocumentBasis" id="8156fcd4-2103-423a-a916-7c97001f67fd"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Questions.Attribute.Question" id="a6cbfaa5-d68e-4e45-b86f-b869d147f193"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Inventory.Attribute.Quantity" id="a8f4a6ec-1cff-41bf-b6d3-c15098bbacbc"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Inventory" id="b3ce2b10-a237-4546-b76f-b1cf64e52860"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Questions" id="badec2f6-fa8c-4b45-848a-7c080fd8f5e7"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Inventory.Attribute.UnitOfMeasure" id="d0df4460-4461-4ad7-affd-a4715846d5b8"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Inventory.Attribute.Item" id="e2e5360f-f1e7-404f-bdd7-18442cb64490"/>
+			<Metadata name="Document.ResponseToRFQ.Attribute.Contract" id="e7795a6d-f28e-4abb-8da4-9857c9021916"/>
+			<Metadata name="Document.ResponseToRFQ.TabularSection.Questions.Attribute.Answer" id="eebb22d0-9492-4f8b-a63e-bdf7b1e76926"/>
+		</Metadata>
+		<Metadata name="Document.ResponseToRFQ.Form.DocumentForm" id="c100e01c-2ec9-47e6-97cd-ca8ec2f1f626" configVersion="11fb004a37e9764292fa9ad9947d38d600000000"/>
+		<Metadata name="Document.ResponseToRFQ.Form.DocumentForm.Form" id="c100e01c-2ec9-47e6-97cd-ca8ec2f1f626.0" configVersion="26f73db72ca03f47be7769f6fe49e3d100000000"/>
+		<Metadata name="HTTPService.RFQ" id="5209c3e8-f982-4098-a0c4-6c4cb6ff612e" configVersion="7c9e56997b3c82449f145d4d7def3db300000000">
+			<Metadata name="HTTPService.RFQ.URLTemplate.Data.Method.GET" id="06c0a78a-e7a6-4742-874a-2138791a64d9"/>
+			<Metadata name="HTTPService.RFQ.URLTemplate.Data" id="32d9eca7-12a1-459a-b45b-42ddafc7866a"/>
+			<Metadata name="HTTPService.RFQ.URLTemplate.Ping.Method.GET" id="5ae45134-c5f0-48a5-a226-46845b98a9f5"/>
+			<Metadata name="HTTPService.RFQ.URLTemplate.Data.Method.POST" id="8ced927a-8814-4664-a947-1711f9ccdbdf"/>
+			<Metadata name="HTTPService.RFQ.URLTemplate.Ping" id="db3b3dfc-a517-4156-9613-d9992226d407"/>
+		</Metadata>
+		<Metadata name="HTTPService.RFQ.Module" id="5209c3e8-f982-4098-a0c4-6c4cb6ff612e.0" configVersion="25764f534e24d34c9dd4be4cdfb9c9c900000000"/>
+		<Metadata name="InformationRegister.RFQKeys" id="04a4a141-fcc6-4722-8997-c990ec5582e3" configVersion="cd8e942b7f01034c9f480e9cbea7d99300000000">
+			<Metadata name="InformationRegister.RFQKeys.Resource.Company" id="0836a243-3121-4bf5-88d9-1a2f48141195"/>
+			<Metadata name="InformationRegister.RFQKeys.Resource.Document" id="947f78b7-e1bb-4810-bd59-632a438c92eb"/>
+			<Metadata name="InformationRegister.RFQKeys.Dimension.RFQKey" id="971388f4-e101-45d1-98f3-a515bfb96202"/>
+			<Metadata name="InformationRegister.RFQKeys.Resource.Contract" id="b8694a33-6d37-4a2a-be01-891e54f045bc"/>
+		</Metadata>
+		<Metadata name="Language.English" id="4b0bbea1-9711-4adf-b61a-3d33f85b39d5" configVersion="c8cac0ad9ccc8c4e9d7b39b00ccd59bb00000000"/>
+		<Metadata name="Role.FullAccess" id="3df29bab-1bfb-4301-aa8e-c4d82929eb7f" configVersion="8e179b336df90e49a58b756c7a3d43d700000000"/>
+		<Metadata name="Role.FullAccess.Rights" id="3df29bab-1bfb-4301-aa8e-c4d82929eb7f.0" configVersion="44638a5c288881449ca00a8473dd668300000000"/>
+		<Metadata name="Role.RFQ" id="20a9c132-7ae0-4851-abf3-02ebf62a677b" configVersion="372802571573cf4fbaa5dd8069224bfc00000000"/>
+		<Metadata name="Role.RFQ.Rights" id="20a9c132-7ae0-4851-abf3-02ebf62a677b.0" configVersion="79165c7c36bbc449ab86cdbe291f7b4b00000000"/>
+		<Metadata name="Subsystem.Administration" id="0b93712c-c040-4e43-889c-3528f511a473" configVersion="14b25259b28e244e96d9c166471fcbec00000000"/>
+		<Metadata name="Subsystem.Documents" id="b1c80444-9cff-462e-ac38-d1a5017d5ca0" configVersion="3b51e1842bbdf040b3918da6b4ecf17700000000"/>
+		<Metadata name="Subsystem.MasterData" id="59e03698-fae7-4bae-a169-1789f641b8d7" configVersion="146ad5b722a9e14a99e7771324919be100000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

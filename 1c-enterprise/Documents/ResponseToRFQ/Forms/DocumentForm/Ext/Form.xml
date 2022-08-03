@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.14">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<ChildItems>
+		<InputField name="Number" id="1">
+			<DataPath>Object.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="NumberContextMenu" id="2"/>
+			<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+		</InputField>
+		<InputField name="Date" id="4">
+			<DataPath>Object.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="DateContextMenu" id="5"/>
+			<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="Company" id="7">
+			<DataPath>Object.Company</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="CompanyContextMenu" id="8"/>
+			<ExtendedTooltip name="CompanyExtendedTooltip" id="9"/>
+		</InputField>
+		<InputField name="Contract" id="10">
+			<DataPath>Object.Contract</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ContractContextMenu" id="11"/>
+			<ExtendedTooltip name="ContractExtendedTooltip" id="12"/>
+		</InputField>
+		<InputField name="DocumentBasis" id="13">
+			<DataPath>Object.DocumentBasis</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="DocumentBasisContextMenu" id="14"/>
+			<ExtendedTooltip name="DocumentBasisExtendedTooltip" id="15"/>
+		</InputField>
+		<Pages name="Pages" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pages</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="17"/>
+			<ChildItems>
+				<Page name="GroupInventory" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Inventory</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>Object.Inventory.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="GroupInventoryExtendedTooltip" id="19"/>
+					<ChildItems>
+						<Table name="Inventory" id="20">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Object.Inventory</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="InventoryContextMenu" id="21"/>
+							<AutoCommandBar name="InventoryCommandBar" id="22"/>
+							<ExtendedTooltip name="InventoryExtendedTooltip" id="23"/>
+							<SearchStringAddition name="InventorySearchString" id="24">
+								<AdditionSource>
+									<Item>Inventory</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="InventorySearchStringContextMenu" id="25"/>
+								<ExtendedTooltip name="InventorySearchStringExtendedTooltip" id="26"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="InventoryViewStatus" id="27">
+								<AdditionSource>
+									<Item>Inventory</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="InventoryViewStatusContextMenu" id="28"/>
+								<ExtendedTooltip name="InventoryViewStatusExtendedTooltip" id="29"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="InventorySearchControl" id="30">
+								<AdditionSource>
+									<Item>Inventory</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="InventorySearchControlContextMenu" id="31"/>
+								<ExtendedTooltip name="InventorySearchControlExtendedTooltip" id="32"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="InventoryLineNumber" id="33">
+									<DataPath>Object.Inventory.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InventoryLineNumberContextMenu" id="34"/>
+									<ExtendedTooltip name="InventoryLineNumberExtendedTooltip" id="35"/>
+								</LabelField>
+								<InputField name="InventoryItem" id="36">
+									<DataPath>Object.Inventory.Item</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InventoryItemContextMenu" id="37"/>
+									<ExtendedTooltip name="InventoryItemExtendedTooltip" id="38"/>
+								</InputField>
+								<InputField name="InventoryQuantity" id="39">
+									<DataPath>Object.Inventory.Quantity</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InventoryQuantityContextMenu" id="40"/>
+									<ExtendedTooltip name="InventoryQuantityExtendedTooltip" id="41"/>
+								</InputField>
+								<InputField name="InventoryUnitOfMeasure" id="42">
+									<DataPath>Object.Inventory.UnitOfMeasure</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InventoryUnitOfMeasureContextMenu" id="43"/>
+									<ExtendedTooltip name="InventoryUnitOfMeasureExtendedTooltip" id="44"/>
+								</InputField>
+								<InputField name="InventoryPrice" id="45">
+									<DataPath>Object.Inventory.Price</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InventoryPriceContextMenu" id="46"/>
+									<ExtendedTooltip name="InventoryPriceExtendedTooltip" id="47"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="GroupQuestions" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Questions</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>Object.Questions.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="GroupQuestionsExtendedTooltip" id="49"/>
+					<ChildItems>
+						<Table name="Questions" id="50">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Object.Questions</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="QuestionsContextMenu" id="51"/>
+							<AutoCommandBar name="QuestionsCommandBar" id="52"/>
+							<ExtendedTooltip name="QuestionsExtendedTooltip" id="53"/>
+							<SearchStringAddition name="QuestionsSearchString" id="54">
+								<AdditionSource>
+									<Item>Questions</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="QuestionsSearchStringContextMenu" id="55"/>
+								<ExtendedTooltip name="QuestionsSearchStringExtendedTooltip" id="56"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="QuestionsViewStatus" id="57">
+								<AdditionSource>
+									<Item>Questions</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="QuestionsViewStatusContextMenu" id="58"/>
+								<ExtendedTooltip name="QuestionsViewStatusExtendedTooltip" id="59"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="QuestionsSearchControl" id="60">
+								<AdditionSource>
+									<Item>Questions</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="QuestionsSearchControlContextMenu" id="61"/>
+								<ExtendedTooltip name="QuestionsSearchControlExtendedTooltip" id="62"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="QuestionsLineNumber" id="63">
+									<DataPath>Object.Questions.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="QuestionsLineNumberContextMenu" id="64"/>
+									<ExtendedTooltip name="QuestionsLineNumberExtendedTooltip" id="65"/>
+								</LabelField>
+								<InputField name="QuestionsQuestion" id="66">
+									<DataPath>Object.Questions.Question</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="QuestionsQuestionContextMenu" id="67"/>
+									<ExtendedTooltip name="QuestionsQuestionExtendedTooltip" id="68"/>
+								</InputField>
+								<InputField name="QuestionsAnswer" id="69">
+									<DataPath>Object.Questions.Answer</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="QuestionsAnswerContextMenu" id="70"/>
+									<ExtendedTooltip name="QuestionsAnswerExtendedTooltip" id="71"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ResponseToRFQ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>

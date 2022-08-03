@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.14">
+	<Item id="bb107f70-32d1-469f-86e2-5407d8cc3c56">
+		<Name>m3</Name>
+		<Code>00000000004</Code>
+		<Description>Cubic Meter</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="fe2b6ea4-36c2-41b5-ab62-d5f3d904b088">
+		<Name>kg</Name>
+		<Code>00000000003</Code>
+		<Description>Kilogram</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="872b4ec1-0ded-4828-bdc1-c6354039d109">
+		<Name>m</Name>
+		<Code>00000000002</Code>
+		<Description>Meter</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="690156d1-84e8-4703-acdb-ed26620709cd">
+		<Name>pcs</Name>
+		<Code>00000000001</Code>
+		<Description>Pcs</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>
