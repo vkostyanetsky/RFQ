@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.14">
 	<ConfigVersions>
-		<Metadata name="Catalog.Companies" id="87a3e81d-e060-45f8-899b-172e2116261a" configVersion="8357fec825307e498cad1370dda24a7c00000000"/>
+		<Metadata name="Catalog.Companies" id="87a3e81d-e060-45f8-899b-172e2116261a" configVersion="02b7de7043a3a14798c7dec1ff91a37a00000000"/>
+		<Metadata name="Catalog.Companies.Predefined" id="87a3e81d-e060-45f8-899b-172e2116261a.1c" configVersion="5f102227e408a14eb5999dd4c07a84db00000000"/>
 		<Metadata name="Catalog.Contracts" id="26a0bf13-b464-4d66-955f-af132d88e98c" configVersion="153ea1d842d97e4cb2817ec2050c8c8400000000"/>
 		<Metadata name="Catalog.Items" id="566ef2f8-9c63-4c36-be0e-daa49acacd1b" configVersion="551034e194c9da4c84280e74cb8f7a5200000000"/>
 		<Metadata name="Catalog.Questions" id="d32ace39-4106-4f6d-888f-3267b50281ca" configVersion="7c815937078e144985015a5b72b06cab00000000"/>
