@@ -64,7 +64,7 @@ class ResponseForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();    
 
-    const request_url = `${process.env.REACT_APP_SERVER_URL}/RequestForQuotation/${this.props.match.params.id}/`
+    const request_url = `${process.env.REACT_APP_SERVER_URL}/Data/${this.props.match.params.id}/`
     const data = this.responseFormData(false)
 
     axios.post(request_url, data)
@@ -79,7 +79,7 @@ class ResponseForm extends React.Component {
   handleSaveAsDraft(event) {
     event.preventDefault();
 
-    const request_url = `${process.env.REACT_APP_SERVER_URL}/RequestForQuotation/${this.props.match.params.id}/`
+    const request_url = `${process.env.REACT_APP_SERVER_URL}/Data/${this.props.match.params.id}/`
     console.log(`Sending a POST request to the REST service: ${request_url}`)
 
     let data = this.responseFormData(true)
@@ -145,7 +145,7 @@ class ResponseForm extends React.Component {
 
 
   componentDidMount() {
-    const url_to_request = `${process.env.REACT_APP_SERVER_URL}/RequestForQuotation/${this.props.match.params.id}/`
+    const url_to_request = `${process.env.REACT_APP_SERVER_URL}/Data/${this.props.match.params.id}/`
     console.log(`Sending a GET request to the REST service: ${url_to_request}`)
 
     fetch(
@@ -219,7 +219,6 @@ class ResponseForm extends React.Component {
           <tr key={inventory.LineNumber}>
             <th scope="row">{inventory.LineNumber}</th>
             <td>{inventory.Item}</td>
-            <td>{inventory.Task}</td>
             <td>{inventory.UnitOfMeasure}</td>
             <td>{inventory.Quantity}</td>
             <td>
@@ -249,25 +248,11 @@ class ResponseForm extends React.Component {
       <div className="container px-4">
         {this.state.alert}
         <h1>
-          RFQ Response <small className="text-muted">{items.Number}</small>
+          Response to RFQ <small className="text-muted">{items.Number}</small>
         </h1>
 
         <p className="h5">{items.Date}</p>
       
-        <div className="mt-4">
-          <p>
-            <strong>{items.Entity}</strong>
-          </p>
-          <dl className="row">
-            <dt className="col-sm-3">Requested Person</dt>
-            <dd className="col-sm-9">{items.Responsible}</dd>
-            <dt className="col-sm-3">Project</dt>
-            <dd className="col-sm-9">{items.Project}</dd>
-            <dt className="col-sm-3">Priority</dt>
-            <dd className="col-sm-9">{items.Priority}</dd>
-          </dl>
-        </div>
-
         <form>
 
         <h3>Inventory</h3>
@@ -276,10 +261,9 @@ class ResponseForm extends React.Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Description</th>
-              <th scope="col">Task</th>
               <th scope="col">UOM</th>
               <th scope="col">Quantity</th>
-              <th scope="col">{items.Company}</th>
+              <th scope="col">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -293,7 +277,7 @@ class ResponseForm extends React.Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Question</th>
-              <th scope="col">{items.Company}</th>
+              <th scope="col">Answer</th>
             </tr>
           </thead>
           <tbody>
