@@ -19,7 +19,7 @@ Do the following steps:
 
 At this point, one of your `Procurement Requisition` documents may look like this:
 
-![Procurement Requisition](screenshots/procurement-requisition.png)
+![Procurement Requisition](images/procurement-requisition.png)
 
 ### 2. Flask Gateway
 
@@ -104,4 +104,4 @@ I would like to point out that you will have your browser opened with the 404 er
 
 Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. For instance, you get something like this:
 
-![Response to RFQ](screenshots/response-to-rfq.png)
+![Response to RFQ](images/response-to-rfq.png)
