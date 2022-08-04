@@ -2,15 +2,17 @@
 
 It is the working example of an external interface for 1C:Enterprise which has been made with React.js & Flask.
 
-## How to start?
+## How to start to develop?
 
 ### 1. Setting up 1C:Enterprise
 
 Do the following steps:
 
-1. Load a 1C:Enterprise configuration from the [1c-enterprise](1c-enterprise) directory.
-2. Create at least two users: a superuser (must have the `Full Access` role assigned) and a user for HTTP requests (assign the role `RFQ` to it).
-3. Fill a `RFQ Interface URL` constant's value (Administration → Tools → RFQ Interface URL). For instance: `http://localhost:3000`  
+1. Load a 1C:Enterprise infobase configuration from the [1c-enterprise](1c-enterprise) directory.
+2. Create at least two users:
+   - a superuser (must have the `Full Access` role assigned)
+   - a user for external HTTP requests (assign the role `RFQ` to it)
+3. Fill `RFQ Interface URL` constant's value (Administration → Tools → RFQ Interface URL). For instance: `http://localhost:3000`  
 4. Create master data: several companies, contracts, items, and questions. You need this to make procurement requisitions.
 5. Create at least one `Procurement Requisition` document, then post it.
 6. Publish `RFQ` HTTP service on your web server.
@@ -64,13 +66,15 @@ It means that the gateway have connected to the 1C:Enterprise infobase, so every
 
 ### 3. Frontend: React Web App
 
-Firstly, you need to download tons of npm libraries to make React.js work. So do it the [react-web-app](react-web-app) directory:
+Finally, it is time to start a web interface. All files you need located in [react-web-app](react-web-app) directory. 
+
+At first, please make sure that the URL of Flask application you got above (`http://127.0.0.1:5000`) is equal to a value of a REACT_APP_SERVER_URL parameter in [.env.local](react-web-app/.env.local) file. Secondly, you need to download tons of npm libraries to make React.js work:
 
 ```commandline
 npm install
 ```
 
-Wait till the procedure ends. Have patience, it may take some time.
+Wait until the procedure ends. Have patience, it may take some time.
 
 Then, start a development server:
 
@@ -78,7 +82,7 @@ Then, start a development server:
 npm start
 ```
 
-You are going to see something like this: 
+You will see something like this: 
 
 ```
 Compiled successfully!
@@ -94,10 +98,10 @@ To create a production build, use npm run build.
 
 Make sure that the local address mentioned above is equal to the value of `RFQ Interface URL` constant you have set before.
 
-Please note that you will have your browser opened with the 404 error. You didn't do anything wrong, it is intended behaviour: the only page that the web application shows is a RFQ form. If no RFQ key provided in URL or the key can't be found, the 404 error appears. 
+I would like to point out that you will have your browser opened with the 404 error immediately after server start. It doesn't mean you did something wrong because it is intended behavior: the only page that the web application shows is a RFQ form. If no RFQ key provided in URL or the key can't be found, the 404 error appears. 
 
 ### 4. Done! 
 
-Links in the `RFQ URL` column of a `Procurement Requisition` document now work. If you click, you get something like this:
+Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. For instance, you get something like this:
 
 ![Response to RFQ](screenshots/response-to-rfq.png)
