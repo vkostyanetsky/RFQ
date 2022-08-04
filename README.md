@@ -4,7 +4,7 @@ It is the working example of an external interface for 1C:Enterprise which has b
 
 ## How to start to develop?
 
-### 1. Setting up 1C:Enterprise
+### 1. 1C:Enterprise
 
 Do the following steps:
 
@@ -21,7 +21,7 @@ At this point, one of your `Procurement Requisition` documents may look like thi
 
 ![Procurement Requisition](screenshots/procurement-requisition.png)
 
-### 2. Setting up Flask gateway
+### 2. Flask Gateway
 
 Now you need to enable a sort of gateway between a 1C:Enterprise infobase and a web interface.
 
@@ -64,7 +64,7 @@ In case of success, you're going to get this response:
 
 It means that the gateway have connected to the 1C:Enterprise infobase, so everything is fine so far. 
 
-### 3. Frontend: React Web App
+### 3. React.js Web Application
 
 Finally, it is time to start a web interface. All files you need located in [react-web-app](react-web-app) directory. 
 
