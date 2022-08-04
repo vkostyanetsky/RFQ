@@ -1,2 +1,6 @@
 # PyCharm
 .idea/
+
+# Node.js
+node_modules/
+build/
