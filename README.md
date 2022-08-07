@@ -87,7 +87,7 @@ Generally, it only has to know how to connect to the HTTP service of the 1C:Ente
 
 If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
 
-Now simply run the `api.py` script:
+Ensure you have Python packages mentioned in the [requirements.txt](flask-proxy/requirements.txt) installed and run the `api.py` script:
 
 ```commandline
 python api.py
