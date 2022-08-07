@@ -2,7 +2,9 @@
 
 This is a little and functionally truncated part of a large project. I published it as a working example of an external interface for 1C:Enterprise.
 
-Perhaps, it will help someone who has no clue how to solve a some similar task.
+It will help someone who has no clue how to solve a some similar task.
+
+![Perhaps](images/perhaps.png)
 
 ## 😌 What is it for?
 
