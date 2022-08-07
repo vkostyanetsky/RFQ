@@ -7,7 +7,12 @@ I hope it will help someone who has no clue how to solve a some similar task.
 - [What is it for?](#-what-is-it-for)
 - [How does it work?](#-how-does-it-work)
 - [How to start the application?](#-how-to-start-the-application)
-- [What if something is not working properly?](#-what-if-something-does-not-work-properly) 
+  - [1C:Enterprise infobase](#1centerprise-infobase)
+  - [Proxy](#proxy)
+  - [Web interface](#web-interface)
+- [What if something is not working properly?](#-what-if-something-does-not-work-properly)
+  - [Known Issues](#known-issues)
+  - [Error Codes](#error-codes)
 
 ## 😌 What is it for?
 
@@ -53,7 +58,7 @@ The project lies on three whales:
 
 As mentioned above, the project consist of three sections. Let's make they work.
 
-### 1. 1C:Enterprise infobase
+### 1C:Enterprise infobase
 
 You need to do the following steps:
 
@@ -66,7 +71,7 @@ You need to do the following steps:
 5. Create master data: several companies, contracts, items, and questions. You will need those later to make procurement requisitions.
 6. Create at least one `Procurement Requisition` document, then post it. You need to add at least one line of each tabular section.  
 
-### 2. Proxy
+### Proxy
 
 Now you have to enable a sort of proxy between the 1C:Enterprise infobase and a web interface.
 
@@ -113,7 +118,7 @@ In case of success, you're going to get this response:
 
 It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. Perhaps. 
 
-### 3. Web interface
+### Web interface
 
 Finally, it is time to start the web interface. All files you need located in [react-web-app](react-web-app) directory. 
 
