@@ -4,7 +4,9 @@ This is a little and functionally truncated part of a large project. I published
 
 ## What is it for?
 
-There is a 1C:Enterprise infobase, where a user can create a Procurement Requisition document. The document has three tabs. First one is a list of suppliers:
+There is a 1C:Enterprise infobase, where a user can create a Procurement Requisition document. It's interface has three tabs.
+
+First one is a list of suppliers:
 
 ![Suppliers](images/pr-suppliers-tab.png)
 
@@ -12,7 +14,7 @@ The second one is a list of inventory to ask for price:
 
 ![Inventory](images/pr-inventory-tab.png)
 
-The last one is a list of questions a user wants to ask a supplier: 
+The last tab is a list of questions a user wants to ask a supplier: 
 
 ![Questions](images/pr-questions-tab.png)
 
