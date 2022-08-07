@@ -4,17 +4,17 @@ This is a little and functionally truncated part of a large project. I published
 
 I hope it will help someone who has no clue how to solve a some similar task.
 
-- [What is it for?](#-what-is-it-for)
-- [How does it work?](#-how-does-it-work)
-- [How to start the application?](#-how-to-start-the-application)
-  - [1C:Enterprise infobase](#1centerprise-infobase)
-  - [Proxy](#proxy)
-  - [Web interface](#web-interface)
-- [What if something is not working properly?](#-what-if-something-does-not-work-properly)
+- [Purpose](#-purpose)
+- [Architecture](#-architecture)
+- [Setup](#-setup)
+  - [1C:Enterprise](#1centerprise)
+  - [Proxy Script](#proxy-script)
+  - [Web Interface](#web-interface)
+- [Troubleshooting](#-troubleshooting)
   - [Known Issues](#known-issues)
   - [Error Codes](#error-codes)
 
-## 😌 What is it for?
+## 😌 Purpose
 
 Well, "RFQ" means "Request for Quotation". To simplify, you want to sell something and need to get which of your suppliers gives you best prices. You can read more on [Wikipedia](https://en.wikipedia.org/wiki/Request_for_quotation).
 
@@ -44,21 +44,21 @@ If a supplier press the `Submit` button, it means that all the needful data are 
 
 In both cases, entered data stores as a `Response to RFQ` document. If a supplier saves a response as a draft, the document just writes. And if a supplier submits a response, the corresponding document posts. 
 
-## 😎 How does it work?
+## 😎 Architecture
 
 The project lies on three whales:
 
-1. Web interface (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
-2. REST proxy service. Made on Python (Flask framework, to be certain). This application intended to transfer data from the web interface to 1C:Enterprise and back, so it can to authenticate on REST HTTP service of 1C:Enterprise infobase. 
-3. 1C:Enterprise infobase. Stores data and provides a REST HTTP service to operate with it. 
+1. Web interface. It is a React.js application. The only visible part for a user within direct access to the 1C:Enterprise infobase. 
+2. Proxy. It is a REST HTTP service script made on Python (on the Flask framework, to be certain). This application intended to transfer data from the web interface to 1C:Enterprise and back, so it can to authenticate on REST HTTP service of 1C:Enterprise infobase. 
+3. 1C:Enterprise. An infobase stores data and provides a REST HTTP service to operate with it. 
 
 ![How does it work?](images/how-does-it-work.png)
 
-## 🤨 How to start the application?
+## 🤨 Setup
 
 As mentioned above, the project consist of three sections. Let's make they work.
 
-### 1C:Enterprise infobase
+### 1C:Enterprise
 
 You need to do the following steps:
 
@@ -71,7 +71,7 @@ You need to do the following steps:
 5. Create master data: several companies, contracts, items, and questions. You will need those later to make procurement requisitions.
 6. Create at least one `Procurement Requisition` document, then post it. You need to add at least one line of each tabular section.  
 
-### Proxy
+### Proxy Script
 
 Now you have to enable a sort of proxy between the 1C:Enterprise infobase and a web interface.
 
@@ -118,7 +118,7 @@ In case of success, you're going to get this response:
 
 It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. Perhaps. 
 
-### Web interface
+### Web Interface
 
 Finally, it is time to start the web interface. All files you need located in [react-web-app](react-web-app) directory. 
 
@@ -158,7 +158,7 @@ I would like to point out that you will have your browser opened with the 404 er
 
 Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. Great work!
 
-## 😇 What if something does not work properly?
+## 😇 Troubleshooting
 
 Well, the all above are for educational purposes, so everything can happen ¯\\\_(ツ)\_/¯ However, I have included some information which may help you to resolve a problem.
 
