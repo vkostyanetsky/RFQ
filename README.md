@@ -11,7 +11,7 @@ I hope it will help someone who has no clue how to solve a some similar task.
 
 ## 😌 What is it for?
 
-Well, "RFQ" means "Response for Quotation". To simplify, you want to sell something and need to get which of your suppliers gives you best prices. You can read more on [Wikipedia](https://en.wikipedia.org/wiki/Request_for_quotation).
+Well, "RFQ" means "Request for Quotation". To simplify, you want to sell something and need to get which of your suppliers gives you best prices. You can read more on [Wikipedia](https://en.wikipedia.org/wiki/Request_for_quotation).
 
 Let's speak about implementation. There is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user of the infobase can create a Procurement Requisition document.
 
