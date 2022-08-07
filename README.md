@@ -7,7 +7,9 @@ It will help someone who has no clue how to solve a some similar task.
 ![Perhaps](images/perhaps.png)
 
 - [What is it for?](#-what-is-it-for)
-- [What if something is not working properly?](#-what-if-something-is-not-working-properly) 
+- [How does it work?](#-how-does-it-work)
+- [How to start the application?](#-how-to-start-the-application)
+- [What if something is not working properly?](#-what-if-something-does-not-work-properly) 
 
 ## 😌 What is it for?
 
@@ -151,7 +153,7 @@ I would like to point out that you will have your browser opened with the 404 er
 
 Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. Great work!
 
-## 😇 What if something is not working properly?
+## 😇 What if something does not work properly?
 
 Well, all of above are for educational purposes, so everything can happen ¯\\\_(ツ)\_/¯ However, I have included some information which may help you to fix a problem.
 
