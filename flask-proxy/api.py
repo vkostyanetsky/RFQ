@@ -5,6 +5,7 @@ import logging
 import logging.config
 from os import getenv
 from os.path import basename
+from sys import exit
 
 import flask
 import requests
