@@ -6,6 +6,9 @@ It will help someone who has no clue how to solve a some similar task.
 
 ![Perhaps](images/perhaps.png)
 
+- [What is it for?](#-what-is-it-for)
+- [What if something is not working properly?](#-what-if-something-is-not-working-properly) 
+
 ## 😌 What is it for?
 
 Well, there is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user of the infobase can create a Procurement Requisition document.
