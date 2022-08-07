@@ -2,11 +2,7 @@
 
 This is a little and functionally truncated part of a large project. I published it as a working example of an external interface for 1C:Enterprise.
 
-It will help someone who has no clue how to solve a some similar task.
-
-![Perhaps](images/perhaps.png)
-
-## Table of contents
+I hope it will help someone who has no clue how to solve a some similar task.
 
 - [What is it for?](#-what-is-it-for)
 - [How does it work?](#-how-does-it-work)
@@ -113,7 +109,7 @@ In case of success, you're going to get this response:
 {"Result": true}
 ```
 
-It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. 
+It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. Perhaps. 
 
 ### 3. Web interface
 
