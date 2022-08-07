@@ -1,6 +1,6 @@
 # 🏪 🛍️ 💰 RFQ
 
-This is a little and functionally truncated part of a large project. I published it as a working example of an external web interface for 1C:Enterprise, which does not use internal web client.
+This is a little and functionally truncated part of a large project. I published it as a working example of an external web interface for 1C:Enterprise, which does not use the internal web client.
 
 I hope it will help someone who has no clue how to solve a some similar task.
 
