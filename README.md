@@ -97,7 +97,7 @@ You will see something like this:
  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 ```
 
-Have a look at the last line. As you can see, your gateway URL is http://127.0.0.1:5000. You can check whether `the gateway works or not; try to access the URL below using a browser:
+Have a look at the last line. As you can see, your proxy URL is http://127.0.0.1:5000. You can check whether the proxy works or not; try to access the URL below using a browser:
 
 ```
 http://127.0.0.1:5000/Ping
