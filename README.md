@@ -22,24 +22,24 @@ The last tab is a list of questions a user wants to ask a supplier:
 
 ![Questions](images/pr-questions-tab.png)
 
-After the document is saved, it becomes possible to fill a response for quotation (RFQ) using a web browser. Have a look at links in a `RFQ URL` column: each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
+After the document is saved, it becomes possible to fill a response for quotation (RFQ) using a web browser. Have a look at links in a `RFQ URL` column in the `Suppliers` tab: each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
 
 When a supplier follows a link received from a user, they see a simple page with a list of inventory to set price, and a list of questions to answer for. Please note it does not require authentication in any way.
 
 ![Response to RFQ](images/response-to-rfq.png)
 
-Below the fields a supplier has two buttons to press: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; if a supplier tries to open the same RFQ URL later, all the entered data remains in place.
+Below the fields a supplier has two buttons to press: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; if a supplier tries to open the same URL later, all the entered data remains in place.
 
-If a user press the `Submit` button it means that all the needful data are entered. So prices & answers will be saved in the 1C:Enterprise infobase, and the RFQ URL will become unavailable from this point.
+If a supplier press the `Submit` button it means that all the needful data are entered. So prices & answers will be saved in the 1C:Enterprise infobase. The URL will become unavailable from this point.
 
-In both cases entered data stores as a `Response to RFQ` document. If user just save it as draft, the document is not posted. If a response is submitted, the corresponding document is posted. 
+In both cases entered data stores as a `Response to RFQ` document. If a supplier just saves it as a draft, the document is not posted. And if a response is submitted, the corresponding document is posted. 
 
 ## 😎 How does it work?
 
 The project lies on three whales:
 
 1. Web interface (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
-2. REST proxy service. Made on Python (Flask framework, to be certain). It is able to authenticate on REST HTTP service of 1C:Enterprise infobase. This application intended to transfer data from the web interface to 1C:Enterprise and back.
+2. REST proxy service. Made on Python (Flask framework, to be certain). This application intended to transfer data from the web interface to 1C:Enterprise and back, so it is able to authenticate on REST HTTP service of 1C:Enterprise infobase. 
 3. 1C:Enterprise infobase. Stores data and provides a REST HTTP service to operate with it. 
 
 ![How does it work?](images/how-does-it-work.png)
@@ -61,11 +61,11 @@ You need to do the following steps:
 5. Create master data: several companies, contracts, items, and questions. You will need those later to make procurement requisitions.
 6. Create at least one `Procurement Requisition` document, then post it. You need to add at least one line of each tabular section.  
 
-### 2. Flask proxy
+### 2. Proxy
 
 Now you need to enable a sort of proxy between the 1C:Enterprise infobase and a web interface.
 
-Have a look at the `flask-proxy` directory. There is a `api.py` script you must set up.
+Have a look at the [flask-proxy](flask-proxy) directory. There is a `api.py` script you must set up.
 
 Generally, it only needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below. If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
 
@@ -104,9 +104,9 @@ In case of success, you're going to get this response:
 {"Result": true}
 ```
 
-It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. Perhaps. 
+It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. 
 
-### 3. React.js Web Application
+### 3. Web interface
 
 Finally, it is time to start the web interface. All files you need located in [react-web-app](react-web-app) directory. 
 
@@ -148,7 +148,9 @@ Now you are able to follow links in the `RFQ URL` column of a `Procurement Requi
 
 ## 😇 What if something is not working properly?
 
-Well, all of above are for educational purposes, so everything can happen. However, I have included some information which may help you to fix a problem.
+Well, all of above are for educational purposes, so everything can happen ¯\_(ツ)_/¯
+
+However, I have included some information which may help you to fix a problem.
 
 ### Known Issues
 
@@ -162,7 +164,7 @@ Instead of a normal response, HTTP service of 1C:Enterprise API may return error
 ```json
 {"ErrorCode": 200, "ErrorText": "No endpoint specified."}
 ```
-
+  
 If an ErrorCode value begins with 1 (for instance: 100, 101 etc.), it means that error has occurred in 1C:Enterprise. If the value begins with 2, it means that error has occurred in the proxy script.
 
 `ErrorText` contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains detail description of the exception.
