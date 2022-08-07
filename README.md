@@ -32,9 +32,9 @@ The second one means that all the needful data are entered. The response will be
 
 The application lies on three whales:
 
-1. 1C:Enterprise infobase (backend). Stores all data and provides a REST HTTP service to operate with it. 
-2. REST proxy service. Made on Python (Flask framework, to be certain). Able to authenticate on REST HTTP service of 1C:Enterprise infobase. Transfer data from the web application to 1C:Enterprise and back.
-3. Web application (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
+1. Web application (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
+2. REST proxy service. Made on Python (Flask framework, to be certain). It is able to authenticate on REST HTTP service of 1C:Enterprise infobase. This application intended to transfer data from the web application to 1C:Enterprise and back.
+3. 1C:Enterprise infobase (backend). Stores all data and provides a REST HTTP service to operate with it. 
 
 ![How does it work?](images/how-does-it-work.png)
 
@@ -45,7 +45,7 @@ As mentioned above, the project consist of three sections — two for backend an
 ### 1. 1C:Enterprise
 
 You need to do the following steps:
-4
+
 1. Load a 1C:Enterprise infobase configuration from the [1c-enterprise](1c-enterprise) directory.
 2. Create at least two users in the infobase:
    - a superuser (must have the `Full Access` role assigned)
@@ -140,6 +140,4 @@ I would like to point out that you will have your browser opened with the 404 er
 
 ### 4. Done! 
 
-Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. For instance, you get something like this:
-
-![Response to RFQ](images/response-to-rfq.png)
+Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. Great work!
