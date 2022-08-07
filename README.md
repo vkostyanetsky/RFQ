@@ -170,7 +170,7 @@ Instead of a normal response, HTTP service of 1C:Enterprise API may return an er
   
 If an ErrorCode value begins with 1 (for instance: 100, 101 etc.), it means that the error has occurred in 1C:Enterprise. If the value begins with 2, it means that the error has occurred in the proxy script.
 
-`ErrorText` contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains a detail description of the exception.
+The `ErrorText` value contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains a detail description of the exception.
 
 | Code | Meaning                                                                                                                 |
 |------|-------------------------------------------------------------------------------------------------------------------------|
