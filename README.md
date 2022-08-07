@@ -1,10 +1,10 @@
-# RFQ
+# 🏪 🛍️ 💰 RFQ
 
 This is a little and functionally truncated part of a large project. I published it as a working example of an external interface for 1C:Enterprise.
 
 Perhaps, it will help someone who has no clue how to solve a some similar task.
 
-## What is it for?
+## 😌 What is it for?
 
 Well, there is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user of the infobase can create a Procurement Requisition document.
 
@@ -32,7 +32,7 @@ If a user press the `Submit` button it means that all the needful data are enter
 
 In both cases entered data stores as a `Response to RFQ` document. If user just save it as draft, the document is not posted. If a response is submitted, the corresponding document is posted. 
 
-## How does it work?
+## 😎 How does it work?
 
 The project lies on three whales:
 
@@ -42,7 +42,7 @@ The project lies on three whales:
 
 ![How does it work?](images/how-does-it-work.png)
 
-## How to start the application?
+## 🤨 How to start the application?
 
 As mentioned above, the project consist of three sections. Let's make they work.
 
@@ -144,7 +144,7 @@ I would like to point out that you will have your browser opened with the 404 er
 
 Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. Great work!
 
-## What if something is not working properly?
+## 😇 What if something is not working properly?
 
 Well, all of above are for educational purposes, so everything can happen. However, I have included some information which may help you to fix a problem.
 
@@ -155,18 +155,20 @@ Well, all of above are for educational purposes, so everything can happen. Howev
 
 ### Error Codes
 
-Instead of a normal response, HTTP service of 1C:Enterprise API may return error, as well as the proxy script. It always has two values only: ErrorCode & ErrorText. For instance:
+Instead of a normal response, HTTP service of 1C:Enterprise API may return error, as well as the proxy script. It always has two values only: `ErrorCode` & `ErrorText`. For instance:
 
+```json
 {"ErrorCode": 200, "ErrorText": "No endpoint specified."}
+```
 
 If an ErrorCode value begins with 1 (for instance: 100, 101 etc.), it means that error has occurred in 1C:Enterprise. If the value begins with 2, it means that error has occurred in the proxy script.
 
-ErrorText contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains detail description of the exception.
+`ErrorText` contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains detail description of the exception.
 
 | Code | Meaning                                                                                                                 |
 |------|-------------------------------------------------------------------------------------------------------------------------|
 | 100  | 1C:Enterprise exception has occurred. It's recommended to check the infobase event log.                                 |
-| 101  | 1C:Enterprise is unable to find key specified in the information register RFQKeys.                                      |
+| 101  | 1C:Enterprise is unable to find key specified in the information register `RFQKeys`.                                    |
 | 102  | 1C:Enterprise is unable to create or update a `Response to RFQ` document since it already exists and posted.            |
 | 103  | 1C:Enterprise is unable to get a `Response to RFQ` document because there are many of them by conditions given.         |
 | 200  | Proxy script throws this one if there is no endpoint specified. This one is unlikely to see in a production deployment. |
