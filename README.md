@@ -2,9 +2,11 @@
 
 This is a little and functionally truncated part of a large project. I published it as a working example of an external interface for 1C:Enterprise.
 
+Perhaps, it will help someone who has no clue how to solve a some similar task.
+
 ## What is it for?
 
-There is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user can create a Procurement Requisition document.
+Well, there is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user of the infobase can create a Procurement Requisition document.
 
 It's interface has three tabs. First one is a list of suppliers:
 
@@ -42,7 +44,7 @@ The application lies on three whales:
 
 As mentioned above, the project consist of three sections — two for backend and one for frontend. Let's make they work.
 
-### 1. 1C:Enterprise
+### 1. 1C:Enterprise infobase
 
 You need to do the following steps:
 
@@ -59,11 +61,13 @@ At this point, one of your `Procurement Requisition` documents may look like thi
 
 ![Procurement Requisition](images/procurement-requisition.png)
 
-### 2. Flask Gateway
+### 2. Flask proxy
 
-Now you need to enable a sort of gateway between a 1C:Enterprise infobase and a web interface.
+Now you need to enable a sort of proxy between the 1C:Enterprise infobase and a web interface.
 
-It needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below. If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
+Have a look at the `flask-proxy` directory. There is a `api.py` script you must set up.
+
+Generally, it only needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below. If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
 
 | Variable Name     | Example Value                         | Meaning                                                       |
 |-------------------|---------------------------------------|---------------------------------------------------------------|
