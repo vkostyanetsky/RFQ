@@ -8,7 +8,7 @@ I hope it will help someone who has no clue how to solve a some similar task.
 - [Architecture](#-architecture)
 - [Setup](#-setup)
   - [1C:Enterprise](#1centerprise)
-  - [Proxy Script](#proxy-script)
+  - [Proxy](#proxy-script)
   - [Web Interface](#web-interface)
 - [Troubleshooting](#-troubleshooting)
   - [Known Issues](#known-issues)
