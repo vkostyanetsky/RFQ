@@ -4,9 +4,9 @@ This is a little and functionally truncated part of a large project. I published
 
 ## What is it for?
 
-There is a 1C:Enterprise infobase, where a user can create a Procurement Requisition document. It's interface has three tabs.
+There is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user can create a Procurement Requisition document.
 
-First one is a list of suppliers:
+It's interface has three tabs. First one is a list of suppliers:
 
 ![Suppliers](images/pr-suppliers-tab.png)
 
@@ -24,11 +24,17 @@ When a supplier follows a link received from a user, it looks like a simple page
 
 ![Response to RFQ](images/response-to-rfq.png)
 
-Below the fields a supplier can see two buttons: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; when a supplier tries to open the same RFQ URL later, all the entered data will remain in place.
+Below the fields a supplier has two buttons to press: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; when a supplier tries to open the same RFQ URL later, all the entered data will remain in place.
 
-Second one means that all the needful data are entered. The response is being saved and a RFQ URL becomes unavailable.
+The second one means that all the needful data are entered. The response will be saved. The RFQ URL will become unavailable from this point.
 
 ## How does it work?
+
+The application lies on three whales:
+
+1. 1C:Enterprise infobase (backend). Stores all data and provides a REST HTTP service to operate with it. 
+2. REST proxy service. Made on Python (Flask framework, to be certain). Able to authenticate on REST HTTP service of 1C:Enterprise infobase. Transfer data from the web application to 1C:Enterprise and back.
+3. Web application (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
 
 ![How does it work?](images/how-does-it-work.png)
 
