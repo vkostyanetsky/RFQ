@@ -1,15 +1,45 @@
 # RFQ
 
-It is the working example of an external interface for 1C:Enterprise which has been made with React.js & Flask.
+This is a little and functionally truncated part of a large project. I published it as a working example of an external interface for 1C:Enterprise.
 
-## How to start to develop?
+## What is it for?
+
+There is a 1C:Enterprise infobase, where a user can create a Procurement Requisition document. The document has three tabs. First one is a list of suppliers:
+
+![Suppliers](images/pr-suppliers-tab.png)
+
+The second one is a list of inventory to ask for price:
+
+![Inventory](images/pr-inventory-tab.png)
+
+The last one is a list of questions a user wants to ask a supplier: 
+
+![Questions](images/pr-questions-tab.png)
+
+After the document is created, it becomes possible to fill a response to web interface via links from `RFQ URL` column. Each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
+
+When a supplier follows a link received from a user, it looks like a simple page with a list of inventory to set price, and a list of questions to answer for. It does not require authentication in any way.
+
+![Response to RFQ](images/response-to-rfq.png)
+
+Below the fields a supplier can see two buttons: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; when a supplier tries to open the same RFQ URL later, all the entered data will remain in place.
+
+Second one means that all the needful data are entered. The response is being saved and a RFQ URL becomes unavailable.
+
+## How does it work?
+
+![How does it work?](images/how-does-it-work.png)
+
+## How to start the application?
+
+As mentioned above, the project consist of three sections — two for backend and one for frontend. Let's make they work.
 
 ### 1. 1C:Enterprise
 
-Do the following steps:
-
+You need to do the following steps:
+4
 1. Load a 1C:Enterprise infobase configuration from the [1c-enterprise](1c-enterprise) directory.
-2. Create at least two users:
+2. Create at least two users in the infobase:
    - a superuser (must have the `Full Access` role assigned)
    - a user for external HTTP requests (assign the role `RFQ` to it)
 3. Fill `RFQ Interface URL` constant's value (Administration → Tools → RFQ Interface URL). For instance: `http://localhost:3000`  
