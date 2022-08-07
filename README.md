@@ -20,46 +20,44 @@ The last tab is a list of questions a user wants to ask a supplier:
 
 ![Questions](images/pr-questions-tab.png)
 
-After the document is saved, it becomes possible to fill a response for quotation (RFQ) using a web browser. Have a look at links in `RFQ URL` column: each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
+After the document is saved, it becomes possible to fill a response for quotation (RFQ) using a web browser. Have a look at links in a `RFQ URL` column: each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
 
-When a supplier follows a link received from a user, it looks like a simple page with a list of inventory to set price, and a list of questions to answer for. It does not require authentication in any way.
+When a supplier follows a link received from a user, they see a simple page with a list of inventory to set price, and a list of questions to answer for. Please note it does not require authentication in any way.
 
 ![Response to RFQ](images/response-to-rfq.png)
 
-Below the fields a supplier has two buttons to press: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; when a supplier tries to open the same RFQ URL later, all the entered data will remain in place.
+Below the fields a supplier has two buttons to press: `Save as Draft` and `Submit`. First one saves all entered data in the 1C:Enterprise infobase; if a supplier tries to open the same RFQ URL later, all the entered data remains in place.
 
-The second one means that all the needful data are entered. The response will be saved. The RFQ URL will become unavailable from this point.
+If a user press the `Submit` button it means that all the needful data are entered. So prices & answers will be saved in the 1C:Enterprise infobase, and the RFQ URL will become unavailable from this point.
+
+In both cases entered data stores as a `Response to RFQ` document. If user just save it as draft, the document is not posted. If a response is submitted, the corresponding document is posted. 
 
 ## How does it work?
 
-The application lies on three whales:
+The project lies on three whales:
 
-1. Web application (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
-2. REST proxy service. Made on Python (Flask framework, to be certain). It is able to authenticate on REST HTTP service of 1C:Enterprise infobase. This application intended to transfer data from the web application to 1C:Enterprise and back.
-3. 1C:Enterprise infobase (backend). Stores all data and provides a REST HTTP service to operate with it. 
+1. Web interface (React.js). The only visible part for a user within direct access to the 1C:Enterprise infobase. 
+2. REST proxy service. Made on Python (Flask framework, to be certain). It is able to authenticate on REST HTTP service of 1C:Enterprise infobase. This application intended to transfer data from the web interface to 1C:Enterprise and back.
+3. 1C:Enterprise infobase. Stores data and provides a REST HTTP service to operate with it. 
 
 ![How does it work?](images/how-does-it-work.png)
 
 ## How to start the application?
 
-As mentioned above, the project consist of three sections — two for backend and one for frontend. Let's make they work.
+As mentioned above, the project consist of three sections. Let's make they work.
 
 ### 1. 1C:Enterprise infobase
 
 You need to do the following steps:
 
 1. Load a 1C:Enterprise infobase configuration from the [1c-enterprise](1c-enterprise) directory.
-2. Create at least two users in the infobase:
+2. Publish `RFQ` HTTP service of the infobase on your web server. 
+3. Create at least two users in the infobase:
    - a superuser (must have the `Full Access` role assigned)
    - a user for external HTTP requests (assign the role `RFQ` to it)
-3. Fill `RFQ Interface URL` constant's value (Administration → Tools → RFQ Interface URL). For instance: `http://localhost:3000`  
-4. Create master data: several companies, contracts, items, and questions. You need this to make procurement requisitions.
-5. Create at least one `Procurement Requisition` document, then post it.
-6. Publish `RFQ` HTTP service on your web server.
-
-At this point, one of your `Procurement Requisition` documents may look like this:
-
-![Procurement Requisition](images/procurement-requisition.png)
+4. Fill `RFQ Interface URL` constant's value (Administration → Tools → RFQ Interface URL). You can use a `http://localhost:3000` value so far.  
+5. Create master data: several companies, contracts, items, and questions. You will need those later to make procurement requisitions.
+6. Create at least one `Procurement Requisition` document, then post it. You need to add at least one line of each tabular section.  
 
 ### 2. Flask proxy
 
@@ -104,11 +102,11 @@ In case of success, you're going to get this response:
 {"Result": true}
 ```
 
-It means that the gateway have connected to the 1C:Enterprise infobase, so everything is fine so far. 
+It means that the proxy has connected to the 1C:Enterprise infobase, so everything is fine. Perhaps. 
 
 ### 3. React.js Web Application
 
-Finally, it is time to start a web interface. All files you need located in [react-web-app](react-web-app) directory. 
+Finally, it is time to start the web interface. All files you need located in [react-web-app](react-web-app) directory. 
 
 At first, please make sure that the URL of Flask application you got above (`http://127.0.0.1:5000`) is equal to a value of a REACT_APP_SERVER_URL parameter in [.env.local](react-web-app/.env.local) file. Secondly, you need to download tons of npm libraries to make React.js work:
 
@@ -145,3 +143,31 @@ I would like to point out that you will have your browser opened with the 404 er
 ### 4. Done! 
 
 Now you are able to follow links in the `RFQ URL` column of a `Procurement Requisition` document. Great work!
+
+## What if something is not working properly?
+
+Well, all of above are for educational purposes, so everything can happen. However, I have included some information which may help you to fix a problem.
+
+### Known Issues
+
+1. The `Price` field in `Inventory` table of the web interface has no control of length or precision, which can possibly lead to data loss.
+2. The `Answer` field in `Questions` table is open-ended, and the respective field in the 1C:Enterprise has no limits as well. It can lead to a problem if a user tries to set massive amount of text as answer.
+
+### Error Codes
+
+Instead of a normal response, HTTP service of 1C:Enterprise API may return error, as well as the proxy script. It always has two values only: ErrorCode & ErrorText. For instance:
+
+{"ErrorCode": 200, "ErrorText": "No endpoint specified."}
+
+If an ErrorCode value begins with 1 (for instance: 100, 101 etc.), it means that error has occurred in 1C:Enterprise. If the value begins with 2, it means that error has occurred in the proxy script.
+
+ErrorText contains a description of the problem, depending on a reason. For instance, if an error is occurred in 1C:Enterprise, it contains detail description of the exception.
+
+| Code | Meaning                                                                                                                 |
+|------|-------------------------------------------------------------------------------------------------------------------------|
+| 100  | 1C:Enterprise exception has occurred. It's recommended to check the infobase event log.                                 |
+| 101  | 1C:Enterprise is unable to find key specified in the information register RFQKeys.                                      |
+| 102  | 1C:Enterprise is unable to create or update a `Response to RFQ` document since it already exists and posted.            |
+| 103  | 1C:Enterprise is unable to get a `Response to RFQ` document because there are many of them by conditions given.         |
+| 200  | Proxy script throws this one if there is no endpoint specified. This one is unlikely to see in a production deployment. |
+| 201  | Proxy script sent request to 1C:Enterprise HTTP service, but received HTTP status code differs from 200.                |
