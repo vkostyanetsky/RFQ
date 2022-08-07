@@ -65,15 +65,17 @@ You need to do the following steps:
 
 Now you need to enable a sort of proxy between the 1C:Enterprise infobase and a web interface.
 
-Have a look at the [flask-proxy](flask-proxy) directory. There is a `api.py` script you must set up.
+Have a look at the [flask-proxy](flask-proxy) directory. There is a [script](flask-proxy/api.py) you must set up.
 
-Generally, it only needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below. If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
+Generally, it only needs to know how to connect to the HTTP service of the 1C:Enterprise infobase. So create three environment variables which are listed below.
 
 | Variable Name     | Example Value                         | Meaning                                                       |
 |-------------------|---------------------------------------|---------------------------------------------------------------|
 | `RFQ_1C_URL`      | `http://localhost/RFQInfobase/hs/RFQ` | URL of the 1C:Enterprise HTTP service that you have published | 
 | `RFQ_1C_USERNAME` | `RFQ User`                            | Login of a 1C:Enterprise user with the RFQ role assigned      |
 | `RFQ_1C_PASSWORD` | `123`                                 | Password of the 1C:Enterprise user                            |
+
+If you use Windows, you can do it via `Windows + R` → `sysdm.cpl` → `Advanced` → `Environment Variables`.
 
 Now simply run the `api.py` script:
 
