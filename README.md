@@ -6,7 +6,7 @@ It will help someone who has no clue how to solve a some similar task.
 
 ![Perhaps](images/perhaps.png)
 
-Table of contents:
+## Table of contents
 
 - [What is it for?](#-what-is-it-for)
 - [How does it work?](#-how-does-it-work)
