@@ -20,7 +20,7 @@ The last tab is a list of questions a user wants to ask a supplier:
 
 ![Questions](images/pr-questions-tab.png)
 
-After the document is created, it becomes possible to fill a response to web interface via links from `RFQ URL` column. Each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
+After the document is saved, it becomes possible to fill a response for quotation (RFQ) using a web browser. Have a look at links in `RFQ URL` column: each of them is unique and corresponds to the supplier (and contract with it) specified in the line. So a user can send each link to a supplier, then wait for response.
 
 When a supplier follows a link received from a user, it looks like a simple page with a list of inventory to set price, and a list of questions to answer for. It does not require authentication in any way.
 
