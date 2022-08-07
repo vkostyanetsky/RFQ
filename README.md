@@ -148,7 +148,7 @@ Now you are able to follow links in the `RFQ URL` column of a `Procurement Requi
 
 ## 😇 What if something is not working properly?
 
-Well, all of above are for educational purposes, so everything can happen ¯\_(ツ)_/¯
+Well, all of above are for educational purposes, so everything can happen ¯\\_(ツ)_/¯
 
 However, I have included some information which may help you to fix a problem.
 
