@@ -56,7 +56,7 @@ The project lies on three whales:
 
 ## 🤨 Setup
 
-As mentioned above, the project consist of three sections. Let's make they work.
+As mentioned above, the project consists of three sections. Let's make they work.
 
 ### 1C:Enterprise
 
