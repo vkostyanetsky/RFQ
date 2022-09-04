@@ -1,6 +1,6 @@
 # 🏪 🛍️ 💰 RFQ
 
-This is a little and functionally truncated part of a large project. I published it as a working example of an external web interface for 1C:Enterprise, which does not use the internal web client.
+This is a little and functionally truncated part of a large project. I published it as a working example of an external web interface for 1C:Enterprise, which does not use internal features of the platform to do this.
 
 I hope it will help someone who has no clue how to solve a some similar task.
 
@@ -16,7 +16,7 @@ I hope it will help someone who has no clue how to solve a some similar task.
 
 ## 😌 Purpose
 
-Well, "RFQ" means "Request for Quotation". To simplify, you want to sell something and need to get which of your suppliers gives you best prices. You can read more on [Wikipedia](https://en.wikipedia.org/wiki/Request_for_quotation).
+Well, "RFQ" means "Request for Quotation". To simplify, you want to sell something and need to get which of your suppliers gives you best prices. You can [read more](https://en.wikipedia.org/wiki/Request_for_quotation) on Wikipedia.
 
 Let's speak about implementation. There is a 1C:Enterprise infobase intended to store all data the application work with. Being authenticated, a user of the infobase can create a Procurement Requisition document.
 
