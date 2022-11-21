@@ -160,7 +160,7 @@ Now you are able to follow links in the `RFQ URL` column of a `Procurement Requi
 
 ## 😇 Troubleshooting
 
-Well, the all above are for educational purposes, so everything can happen ¯\\\_(ツ)\_/¯ However, I have included some information which may help you to resolve a problem.
+Well, the all above are for educational purposes, so everything can happen ¯\\\_(ツ)\_/¯ However, I have included some information which may help you solve a problem.
 
 ### Known Issues
 
